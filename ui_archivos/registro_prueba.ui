@@ -1,0 +1,624 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>800</width>
+    <height>600</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Registro de pasajeros</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">QMainWindow{
+	
+	background-color: rgb(129, 255, 182);
+}
+
+QGroupBox{
+    background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
+                                      stop: 0 #E0E0E0, stop: 1 #FFFFFF);
+    border: 2px solid gray;
+    border-radius: 9px;
+    margin-top: 1ex; /* leave space at the top for the title */
+}
+
+QLabel{
+	color:rgb(53, 123, 158);	
+	font: Italic 12pt &quot;Calibri&quot;;
+}
+
+QLabel#lbl_nro_hab_1{
+	
+	background-color: rgb(108, 108, 108);
+	border: 1px solid;
+	border-color: rgb(0,0,0);
+	color:rgb(255,255,255);	
+	font: Bold 12pt &quot;Arial&quot;;
+}
+QLabel#lbl_nro_hab_2{
+	
+	background-color: rgb(108, 108, 108);
+	border: 1px solid;
+	border-color: rgb(0,0,0);
+	color:rgb(255,255,255);	
+	font: Bold 12pt &quot;Arial&quot;;
+}
+QLabel#lbl_nro_hab_3{
+	
+	background-color: rgb(108, 108, 108);
+	border: 1px solid;
+	border-color: rgb(0,0,0);
+	color:rgb(255,255,255);	
+	font: Bold 12pt &quot;Arial&quot;;
+}
+QLabel#lbl_nro_hab_4{
+	
+	background-color: rgb(108, 108, 108);
+	border: 1px solid;
+	border-color: rgb(0,0,0);
+	color:rgb(255,255,255);	
+	font: Bold 12pt &quot;Arial&quot;;
+}
+
+QLabel#lbl_referencia_1{
+	
+	background-color: rgb(158, 158, 158);
+	border: 1px solid;
+	border-color: rgb(0,0,0);
+	color:rgb(0,0,0);	
+	font: Bold 12pt &quot;Arial&quot;;
+}
+QLabel#lbl_referencia_2{
+	
+	background-color: rgb(158, 158, 158);
+	border: 1px solid;
+	border-color: rgb(0,0,0);
+	color:rgb(0,0,0);	
+	font: Bold 12pt &quot;Arial&quot;;
+}
+QLabel#lbl_referencia_3{
+	
+	background-color: rgb(158, 158, 158);
+	border: 1px solid;
+	border-color: rgb(0,0,0);
+	color:rgb(0,0,0);	
+	font: Bold 12pt &quot;Arial&quot;;
+}
+QLabel#lbl_referencia_4{
+	
+	background-color: rgb(158, 158, 158);
+	border: 1px solid;
+	border-color: rgb(0,0,0);
+	color:rgb(0,0,0);	
+	font: Bold 12pt &quot;Arial&quot;;
+}
+
+QLabel#lbl_estado_1{
+	
+	background-color: rgb(158, 158, 158);
+	border: 1px solid;
+	border-color: rgb(0,0,0);
+	color:rgb(255,255,255);	
+	font: Bold 12pt &quot;Arial&quot;;
+}
+QLabel#lbl_estado_2{
+	
+	background-color: rgb(158, 158, 158);
+	border: 1px solid;
+	border-color: rgb(0,0,0);
+	color:rgb(255,255,255);	
+	font: Bold 12pt &quot;Arial&quot;;
+}
+QLabel#lbl_estado_3{
+	
+	background-color: rgb(158, 158, 158);
+	border: 1px solid;
+	border-color: rgb(0,0,0);
+	color:rgb(255,255,255);	
+	font: Bold 12pt &quot;Arial&quot;;
+}
+QLabel#lbl_estado_4{
+	
+	background-color: rgb(158, 158, 158);
+	border: 1px solid;
+	border-color: rgb(0,0,0);
+	color:rgb(255,255,255);	
+	font: Bold 12pt &quot;Arial&quot;;
+}
+
+QPushButton{
+	background-color: rgb(58, 135, 173);
+    border: 2px solid gray;
+    border-radius: 9px;	
+	color:rgb(255,255,255);	
+	font: Bold 9.5pt &quot;Calibri&quot;;
+}
+QPushButton:hover{
+	background-color: rgb(83, 193, 247);
+    border: 2px solid black;
+    border-radius: 9px;	
+	color:rgb(255,255,255);	
+	font: Bold 10pt &quot;Calibri&quot;;
+}
+
+QPushButton:!enable{
+	background-color: rgb(rgb(167, 210, 249));
+    border: 2px solid gray;
+    border-radius: 9px;	
+	color:rgb(255,255,255);	
+	font: Bold 11pt &quot;Calibri&quot;;
+}</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <widget class="QGroupBox" name="groupBox">
+    <property name="geometry">
+     <rect>
+      <x>90</x>
+      <y>90</y>
+      <width>261</width>
+      <height>181</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true"/>
+    </property>
+    <property name="title">
+     <string>HABITACION</string>
+    </property>
+    <widget class="QPushButton" name="btn_ocupa_libera">
+     <property name="geometry">
+      <rect>
+       <x>180</x>
+       <y>140</y>
+       <width>71</width>
+       <height>28</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+    </widget>
+    <widget class="QLabel" name="lbl_nro_hab_1">
+     <property name="geometry">
+      <rect>
+       <x>90</x>
+       <y>10</y>
+       <width>161</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignCenter</set>
+     </property>
+    </widget>
+    <widget class="QLabel" name="lbl_referencia_1">
+     <property name="geometry">
+      <rect>
+       <x>20</x>
+       <y>100</y>
+       <width>221</width>
+       <height>25</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+    </widget>
+    <widget class="QLabel" name="lbl_estado_1">
+     <property name="geometry">
+      <rect>
+       <x>110</x>
+       <y>58</y>
+       <width>131</width>
+       <height>25</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="btn_reserva">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>140</y>
+       <width>81</width>
+       <height>28</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="btn_repara">
+     <property name="geometry">
+      <rect>
+       <x>100</x>
+       <y>140</y>
+       <width>71</width>
+       <height>28</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+    </widget>
+    <widget class="QLabel" name="label">
+     <property name="geometry">
+      <rect>
+       <x>40</x>
+       <y>60</y>
+       <width>61</width>
+       <height>16</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Estado:</string>
+     </property>
+    </widget>
+   </widget>
+   <widget class="QGroupBox" name="groupBox_2">
+    <property name="geometry">
+     <rect>
+      <x>410</x>
+      <y>90</y>
+      <width>261</width>
+      <height>181</height>
+     </rect>
+    </property>
+    <property name="title">
+     <string>HABITACION</string>
+    </property>
+    <widget class="QPushButton" name="btn_ocupa_libera_2">
+     <property name="geometry">
+      <rect>
+       <x>174</x>
+       <y>140</y>
+       <width>81</width>
+       <height>28</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+    </widget>
+    <widget class="QLabel" name="lbl_nro_hab_2">
+     <property name="geometry">
+      <rect>
+       <x>90</x>
+       <y>10</y>
+       <width>161</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignCenter</set>
+     </property>
+    </widget>
+    <widget class="QLabel" name="lbl_referencia_2">
+     <property name="geometry">
+      <rect>
+       <x>20</x>
+       <y>100</y>
+       <width>221</width>
+       <height>25</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+    </widget>
+    <widget class="QLabel" name="lbl_estado_2">
+     <property name="geometry">
+      <rect>
+       <x>120</x>
+       <y>57</y>
+       <width>121</width>
+       <height>25</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="btn_repara_2">
+     <property name="geometry">
+      <rect>
+       <x>98</x>
+       <y>140</y>
+       <width>71</width>
+       <height>28</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="btn_reserva_2">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>140</y>
+       <width>81</width>
+       <height>28</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+    </widget>
+    <widget class="QLabel" name="label_2">
+     <property name="geometry">
+      <rect>
+       <x>50</x>
+       <y>60</y>
+       <width>61</width>
+       <height>16</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Estado:</string>
+     </property>
+    </widget>
+   </widget>
+   <widget class="QPushButton" name="boton_salir">
+    <property name="geometry">
+     <rect>
+      <x>590</x>
+      <y>520</y>
+      <width>191</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>FINALIZAR</string>
+    </property>
+   </widget>
+   <widget class="QGroupBox" name="groupBox_3">
+    <property name="geometry">
+     <rect>
+      <x>90</x>
+      <y>300</y>
+      <width>261</width>
+      <height>181</height>
+     </rect>
+    </property>
+    <property name="title">
+     <string>HABITACION</string>
+    </property>
+    <widget class="QPushButton" name="btn_ocupa_libera_3">
+     <property name="geometry">
+      <rect>
+       <x>175</x>
+       <y>140</y>
+       <width>81</width>
+       <height>28</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+    </widget>
+    <widget class="QLabel" name="lbl_nro_hab_3">
+     <property name="geometry">
+      <rect>
+       <x>90</x>
+       <y>10</y>
+       <width>161</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignCenter</set>
+     </property>
+    </widget>
+    <widget class="QLabel" name="lbl_referencia_3">
+     <property name="geometry">
+      <rect>
+       <x>20</x>
+       <y>100</y>
+       <width>221</width>
+       <height>25</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+    </widget>
+    <widget class="QLabel" name="lbl_estado_3">
+     <property name="geometry">
+      <rect>
+       <x>120</x>
+       <y>58</y>
+       <width>121</width>
+       <height>25</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="btn_repara_3">
+     <property name="geometry">
+      <rect>
+       <x>100</x>
+       <y>140</y>
+       <width>71</width>
+       <height>28</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="btn_reserva_3">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>140</y>
+       <width>81</width>
+       <height>28</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+    </widget>
+    <widget class="QLabel" name="label_3">
+     <property name="geometry">
+      <rect>
+       <x>50</x>
+       <y>60</y>
+       <width>61</width>
+       <height>16</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Estado:</string>
+     </property>
+    </widget>
+   </widget>
+   <widget class="QGroupBox" name="groupBox_4">
+    <property name="geometry">
+     <rect>
+      <x>410</x>
+      <y>300</y>
+      <width>261</width>
+      <height>181</height>
+     </rect>
+    </property>
+    <property name="title">
+     <string>HABITACION</string>
+    </property>
+    <widget class="QPushButton" name="btn_ocupa_libera_4">
+     <property name="geometry">
+      <rect>
+       <x>173</x>
+       <y>140</y>
+       <width>81</width>
+       <height>28</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+    </widget>
+    <widget class="QLabel" name="lbl_nro_hab_4">
+     <property name="geometry">
+      <rect>
+       <x>90</x>
+       <y>10</y>
+       <width>161</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignCenter</set>
+     </property>
+    </widget>
+    <widget class="QLabel" name="lbl_referencia_4">
+     <property name="geometry">
+      <rect>
+       <x>20</x>
+       <y>100</y>
+       <width>221</width>
+       <height>25</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+    </widget>
+    <widget class="QLabel" name="lbl_estado_4">
+     <property name="geometry">
+      <rect>
+       <x>120</x>
+       <y>58</y>
+       <width>121</width>
+       <height>25</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="btn_repara_4">
+     <property name="geometry">
+      <rect>
+       <x>97</x>
+       <y>140</y>
+       <width>71</width>
+       <height>28</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="btn_reserva_4">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>140</y>
+       <width>81</width>
+       <height>28</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+    </widget>
+    <widget class="QLabel" name="label_4">
+     <property name="geometry">
+      <rect>
+       <x>50</x>
+       <y>60</y>
+       <width>61</width>
+       <height>16</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Estado:</string>
+     </property>
+    </widget>
+   </widget>
+  </widget>
+  <widget class="QStatusBar" name="statusbar"/>
+ </widget>
+ <resources/>
+ <connections>
+  <connection>
+   <sender>boton_salir</sender>
+   <signal>clicked()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>close()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>679</x>
+     <y>496</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>800</x>
+     <y>389</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+</ui>

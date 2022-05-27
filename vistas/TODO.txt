@@ -1,0 +1,12 @@
+RESERVAS:
+-Hacer un QDialog con la fecha y el detalle
+-Agregar botones de CONFIRMAR - EDITAR - ELIMINAR
+
+NOVEDADES:
+-Hacer un QDialog con una tabla que permita cargar las novedades del dia
+-La ventana se debe mistrar al iniciar la app o sino por medio del boton
+-Agregar botones de CONFIRMAR - EDITAR - ELIMINAR
+
+A FUTURO:
+-Hacer una API que devuelva las novedades actualizadas cada 1 hora, que luego las tome una app del celu 
+ y notifique de los cambios en cada habitacion. 

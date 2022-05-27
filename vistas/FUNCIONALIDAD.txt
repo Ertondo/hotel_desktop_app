@@ -1,0 +1,37 @@
+PAGINA INICIO
+--------------
+
+Menu superior (INICIO, NOVEDADES, RESERVAS, REFACCIONES, CONTABILIDAD, FINALIZAR)
+-------------
+
+BOTON INICIO: muestra la ventana inicial sin las novedades.
+
+BOTON NOVEDADES: abre un QDialog que muestra las novedades(TableWidget) de cada habitación y las reservas.
+
+BOTON RESERVAS: abre un QDialog que lista(TableWidget) las reservas actuales y botones de AGREGAR, EDITAR, BORRAR y FINALIZAR.
+
+BOTON REFACCIONES: abre un QDialog que lista(TableWidget) las reparaciones actuales y las habitaciones bloqueadas, por 
+                último los botones de AGREGAR, EDITAR, BORRAR y FINALIZAR.
+
+BOTON CONTABILIDAD: para ver a futuro.
+
+
+GroupBoxes (uno por habitacion)
+-------------------------------
+
+Labels(n): 
+    -lbl_estado_n
+    -lbl_ocupa_libera_n
+    -lbl_referencia_n
+PushButtons(n):
+    -btn_consulta_n
+    -btn_libera_n
+    -btn_ocupa_n
+
+BOTON CONSULTA - Si presiono el boton CONSULTA, abre un QDialog que muestra los pasajeros registrados,
+un dibujo de cama y la cantidad y botones EDITAR, BORRAR para los datos de los pasajeros
+ y VOLVER para salir.
+
+BOTON LIBERA - luego de confirmar con un QMessageBox, llamo a método libera_habitacion()
+
+BOTON OCUPA - llama al método ocupa_habitacion() en la ventana_registro_pasajeros.ui

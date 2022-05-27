@@ -1,0 +1,745 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1200</width>
+    <height>800</height>
+   </rect>
+  </property>
+  <property name="minimumSize">
+   <size>
+    <width>1200</width>
+    <height>800</height>
+   </size>
+  </property>
+  <property name="maximumSize">
+   <size>
+    <width>1200</width>
+    <height>800</height>
+   </size>
+  </property>
+  <property name="windowTitle">
+   <string>Ingreso de pasajeros</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <property name="styleSheet">
+    <string notr="true">QFrame{
+background-color: rgb(255, 230, 212)
+}</string>
+   </property>
+   <layout class="QVBoxLayout" name="verticalLayout">
+    <item>
+     <widget class="QFrame" name="frame_registro">
+      <property name="styleSheet">
+       <string notr="true">QGroupBox{
+	background-color: rgb(204, 204, 204);
+	border-width: 2px;
+	border-style: solid;
+	border-color: rgb(131, 131, 131);
+	border-radius: 5 px;
+	margin-top: 4ex;
+	margin-left: 2ex;
+}
+
+QGroupBox::title {
+    subcontrol-origin: margin;
+    subcontrol-position: top left; /* position at the top left */
+    padding: 0 3px;
+}
+
+QTableView{
+	background-color: rgb(225, 225, 225);
+	border-width: 1px;
+	border-style: solid;
+	border-color: rgb(131, 131, 131);
+	border-radius: 3 px;
+}
+
+QHeaderView::section{
+	background-color: rgb(204, 204, 204);
+	border: 1px solid rgb(131, 131, 131);
+	border-style: solid;	
+	font-size: bold 12px;
+}
+
+QTableWidget QTableCornerButton::section{
+	background-color: rgb(204, 204, 204);
+	border: 1px solid rgb(131, 131, 131);
+}
+QLabel::lbl_mensaje{
+	background-color: rgb(255,0,0);
+	foreground-color: rgb(255, 0, 0);
+	font: 12pt &quot;Calibri&quot;;
+}</string>
+      </property>
+      <property name="frameShape">
+       <enum>QFrame::StyledPanel</enum>
+      </property>
+      <property name="frameShadow">
+       <enum>QFrame::Raised</enum>
+      </property>
+      <layout class="QGridLayout" name="gridLayout">
+       <item row="0" column="0">
+        <spacer name="horizontalSpacer">
+         <property name="orientation">
+          <enum>Qt::Horizontal</enum>
+         </property>
+         <property name="sizeHint" stdset="0">
+          <size>
+           <width>102</width>
+           <height>20</height>
+          </size>
+         </property>
+        </spacer>
+       </item>
+       <item row="0" column="1">
+        <widget class="QGroupBox" name="groupBox_pasajero">
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
+         <property name="minimumSize">
+          <size>
+           <width>920</width>
+           <height>310</height>
+          </size>
+         </property>
+         <property name="maximumSize">
+          <size>
+           <width>920</width>
+           <height>310</height>
+          </size>
+         </property>
+         <property name="font">
+          <font>
+           <pointsize>17</pointsize>
+           <weight>75</weight>
+           <bold>true</bold>
+          </font>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">QLabel{
+	font: bold 15px;
+	background-color: rgb(204, 204, 204);
+}
+
+
+
+QLabel::lbl_mensaje2{
+	background-color: rgb(255,255,255);
+	color: rgb(255, 0, 0);
+	font: 6pt &quot;Calibri&quot;;
+
+}
+
+QLineEdit{
+	background-color: rgb(255,255,255);
+	font: 12pt &quot;Calibri&quot;;
+	border-width: 2px;
+	border-style: solid;
+	border-color: rgb(131, 131, 131)
+}
+
+QPushButton{
+	background-color: rgb(255,255,255);
+	font: 12pt &quot;Calibri&quot;;
+	border-width: 2px;
+	border-style: solid;
+	border-color: rgb(131, 131, 131);
+	border-radius: 4px;
+}
+
+QPushButton:hover{
+	background-color: rgb(153, 142, 140);
+	font: 75 italic 12pt &quot;Calibri&quot;;
+	border-width: 2px;
+	border-style: solid;
+	border-color: rgb(131, 131, 131);
+	border-radius: 4px;
+}</string>
+         </property>
+         <property name="title">
+          <string>Registro de pasajeros</string>
+         </property>
+         <property name="alignment">
+          <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+         </property>
+         <property name="flat">
+          <bool>true</bool>
+         </property>
+         <property name="checkable">
+          <bool>false</bool>
+         </property>
+         <widget class="QLabel" name="label">
+          <property name="geometry">
+           <rect>
+            <x>371</x>
+            <y>72</y>
+            <width>72</width>
+            <height>18</height>
+           </rect>
+          </property>
+          <property name="text">
+           <string>NOMBRE:</string>
+          </property>
+          <property name="buddy">
+           <cstring>lineEdit_nombre</cstring>
+          </property>
+         </widget>
+         <widget class="QLineEdit" name="lineEdit_nombre">
+          <property name="geometry">
+           <rect>
+            <x>450</x>
+            <y>70</y>
+            <width>391</width>
+            <height>25</height>
+           </rect>
+          </property>
+          <property name="maxLength">
+           <number>50</number>
+          </property>
+          <property name="cursorPosition">
+           <number>0</number>
+          </property>
+         </widget>
+         <widget class="QLabel" name="label_2">
+          <property name="geometry">
+           <rect>
+            <x>61</x>
+            <y>71</y>
+            <width>104</width>
+            <height>18</height>
+           </rect>
+          </property>
+          <property name="text">
+           <string>DOCUMENTO:</string>
+          </property>
+          <property name="buddy">
+           <cstring>lineEdit_dni</cstring>
+          </property>
+         </widget>
+         <widget class="QLineEdit" name="lineEdit_dni">
+          <property name="geometry">
+           <rect>
+            <x>180</x>
+            <y>69</y>
+            <width>137</width>
+            <height>25</height>
+           </rect>
+          </property>
+          <property name="maxLength">
+           <number>8</number>
+          </property>
+         </widget>
+         <widget class="QLabel" name="label_3">
+          <property name="geometry">
+           <rect>
+            <x>60</x>
+            <y>120</y>
+            <width>94</width>
+            <height>18</height>
+           </rect>
+          </property>
+          <property name="text">
+           <string>LOCALIDAD:</string>
+          </property>
+          <property name="buddy">
+           <cstring>lineEdit_localidad</cstring>
+          </property>
+         </widget>
+         <widget class="QLineEdit" name="lineEdit_localidad">
+          <property name="geometry">
+           <rect>
+            <x>159</x>
+            <y>118</y>
+            <width>241</width>
+            <height>25</height>
+           </rect>
+          </property>
+          <property name="maxLength">
+           <number>30</number>
+          </property>
+          <property name="cursorPosition">
+           <number>0</number>
+          </property>
+         </widget>
+         <widget class="QLabel" name="label_4">
+          <property name="geometry">
+           <rect>
+            <x>460</x>
+            <y>120</y>
+            <width>94</width>
+            <height>18</height>
+           </rect>
+          </property>
+          <property name="text">
+           <string>PROVINCIA:</string>
+          </property>
+          <property name="buddy">
+           <cstring>lineEdit_provincia</cstring>
+          </property>
+         </widget>
+         <widget class="QLineEdit" name="lineEdit_provincia">
+          <property name="geometry">
+           <rect>
+            <x>559</x>
+            <y>118</y>
+            <width>281</width>
+            <height>25</height>
+           </rect>
+          </property>
+          <property name="maxLength">
+           <number>30</number>
+          </property>
+          <property name="cursorPosition">
+           <number>0</number>
+          </property>
+          <property name="alignment">
+           <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+          </property>
+         </widget>
+         <widget class="QLabel" name="label_5">
+          <property name="geometry">
+           <rect>
+            <x>61</x>
+            <y>163</y>
+            <width>73</width>
+            <height>18</height>
+           </rect>
+          </property>
+          <property name="text">
+           <string>PATENTE:</string>
+          </property>
+          <property name="buddy">
+           <cstring>lineEdit_patente</cstring>
+          </property>
+         </widget>
+         <widget class="QLineEdit" name="lineEdit_patente">
+          <property name="geometry">
+           <rect>
+            <x>140</x>
+            <y>160</y>
+            <width>137</width>
+            <height>25</height>
+           </rect>
+          </property>
+          <property name="maxLength">
+           <number>8</number>
+          </property>
+          <property name="cursorPosition">
+           <number>0</number>
+          </property>
+          <property name="alignment">
+           <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+          </property>
+         </widget>
+         <widget class="QLabel" name="label_6">
+          <property name="geometry">
+           <rect>
+            <x>61</x>
+            <y>211</y>
+            <width>53</width>
+            <height>18</height>
+           </rect>
+          </property>
+          <property name="text">
+           <string>EMAIL:</string>
+          </property>
+          <property name="buddy">
+           <cstring>lineEdit_email</cstring>
+          </property>
+         </widget>
+         <widget class="QLineEdit" name="lineEdit_email">
+          <property name="geometry">
+           <rect>
+            <x>120</x>
+            <y>210</y>
+            <width>371</width>
+            <height>25</height>
+           </rect>
+          </property>
+          <property name="maxLength">
+           <number>50</number>
+          </property>
+          <property name="cursorPosition">
+           <number>0</number>
+          </property>
+         </widget>
+         <widget class="QLabel" name="label_7">
+          <property name="geometry">
+           <rect>
+            <x>311</x>
+            <y>161</y>
+            <width>84</width>
+            <height>18</height>
+           </rect>
+          </property>
+          <property name="text">
+           <string>VEHICULO:</string>
+          </property>
+          <property name="buddy">
+           <cstring>lineEdit_vehiculo</cstring>
+          </property>
+         </widget>
+         <widget class="QLineEdit" name="lineEdit_vehiculo">
+          <property name="geometry">
+           <rect>
+            <x>400</x>
+            <y>160</y>
+            <width>211</width>
+            <height>25</height>
+           </rect>
+          </property>
+          <property name="maxLength">
+           <number>30</number>
+          </property>
+          <property name="cursorPosition">
+           <number>0</number>
+          </property>
+          <property name="alignment">
+           <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+          </property>
+         </widget>
+         <widget class="QLabel" name="label_8">
+          <property name="geometry">
+           <rect>
+            <x>531</x>
+            <y>212</y>
+            <width>86</width>
+            <height>18</height>
+           </rect>
+          </property>
+          <property name="text">
+           <string>TELEFONO:</string>
+          </property>
+          <property name="buddy">
+           <cstring>lineEdit_telefono</cstring>
+          </property>
+         </widget>
+         <widget class="QLineEdit" name="lineEdit_telefono">
+          <property name="geometry">
+           <rect>
+            <x>620</x>
+            <y>210</y>
+            <width>137</width>
+            <height>25</height>
+           </rect>
+          </property>
+          <property name="maxLength">
+           <number>15</number>
+          </property>
+          <property name="cursorPosition">
+           <number>0</number>
+          </property>
+          <property name="alignment">
+           <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+          </property>
+         </widget>
+         <widget class="QPushButton" name="btn_cancelar">
+          <property name="geometry">
+           <rect>
+            <x>490</x>
+            <y>260</y>
+            <width>101</width>
+            <height>28</height>
+           </rect>
+          </property>
+          <property name="text">
+           <string>CANCELAR</string>
+          </property>
+         </widget>
+         <widget class="QPushButton" name="btn_siguiente">
+          <property name="geometry">
+           <rect>
+            <x>600</x>
+            <y>260</y>
+            <width>111</width>
+            <height>28</height>
+           </rect>
+          </property>
+          <property name="text">
+           <string>SIGUIENTE</string>
+          </property>
+         </widget>
+         <widget class="QPushButton" name="btn_finalizar">
+          <property name="geometry">
+           <rect>
+            <x>780</x>
+            <y>260</y>
+            <width>101</width>
+            <height>28</height>
+           </rect>
+          </property>
+          <property name="text">
+           <string>FINALIZAR</string>
+          </property>
+         </widget>
+         <widget class="QLabel" name="lbl_mensaje">
+          <property name="geometry">
+           <rect>
+            <x>185</x>
+            <y>95</y>
+            <width>161</width>
+            <height>16</height>
+           </rect>
+          </property>
+          <property name="palette">
+           <palette>
+            <active>
+             <colorrole role="Button">
+              <brush brushstyle="SolidPattern">
+               <color alpha="255">
+                <red>204</red>
+                <green>204</green>
+                <blue>204</blue>
+               </color>
+              </brush>
+             </colorrole>
+             <colorrole role="Base">
+              <brush brushstyle="SolidPattern">
+               <color alpha="255">
+                <red>204</red>
+                <green>204</green>
+                <blue>204</blue>
+               </color>
+              </brush>
+             </colorrole>
+             <colorrole role="Window">
+              <brush brushstyle="SolidPattern">
+               <color alpha="255">
+                <red>204</red>
+                <green>204</green>
+                <blue>204</blue>
+               </color>
+              </brush>
+             </colorrole>
+            </active>
+            <inactive>
+             <colorrole role="Button">
+              <brush brushstyle="SolidPattern">
+               <color alpha="255">
+                <red>204</red>
+                <green>204</green>
+                <blue>204</blue>
+               </color>
+              </brush>
+             </colorrole>
+             <colorrole role="Base">
+              <brush brushstyle="SolidPattern">
+               <color alpha="255">
+                <red>204</red>
+                <green>204</green>
+                <blue>204</blue>
+               </color>
+              </brush>
+             </colorrole>
+             <colorrole role="Window">
+              <brush brushstyle="SolidPattern">
+               <color alpha="255">
+                <red>204</red>
+                <green>204</green>
+                <blue>204</blue>
+               </color>
+              </brush>
+             </colorrole>
+            </inactive>
+            <disabled>
+             <colorrole role="Button">
+              <brush brushstyle="SolidPattern">
+               <color alpha="255">
+                <red>204</red>
+                <green>204</green>
+                <blue>204</blue>
+               </color>
+              </brush>
+             </colorrole>
+             <colorrole role="Base">
+              <brush brushstyle="SolidPattern">
+               <color alpha="255">
+                <red>204</red>
+                <green>204</green>
+                <blue>204</blue>
+               </color>
+              </brush>
+             </colorrole>
+             <colorrole role="Window">
+              <brush brushstyle="SolidPattern">
+               <color alpha="255">
+                <red>204</red>
+                <green>204</green>
+                <blue>204</blue>
+               </color>
+              </brush>
+             </colorrole>
+            </disabled>
+           </palette>
+          </property>
+          <property name="font">
+           <font>
+            <pointsize>-1</pointsize>
+            <weight>75</weight>
+            <italic>false</italic>
+            <bold>true</bold>
+           </font>
+          </property>
+          <property name="text">
+           <string>*Campo Obligatorio</string>
+          </property>
+         </widget>
+         <widget class="QLabel" name="lbl_mensaje_2">
+          <property name="geometry">
+           <rect>
+            <x>450</x>
+            <y>95</y>
+            <width>161</width>
+            <height>16</height>
+           </rect>
+          </property>
+          <property name="text">
+           <string>*Campo Obligatorio</string>
+          </property>
+         </widget>
+        </widget>
+       </item>
+       <item row="0" column="2">
+        <spacer name="horizontalSpacer_2">
+         <property name="orientation">
+          <enum>Qt::Horizontal</enum>
+         </property>
+         <property name="sizeHint" stdset="0">
+          <size>
+           <width>112</width>
+           <height>20</height>
+          </size>
+         </property>
+        </spacer>
+       </item>
+       <item row="1" column="1">
+        <spacer name="verticalSpacer_2">
+         <property name="orientation">
+          <enum>Qt::Vertical</enum>
+         </property>
+         <property name="sizeHint" stdset="0">
+          <size>
+           <width>20</width>
+           <height>212</height>
+          </size>
+         </property>
+        </spacer>
+       </item>
+       <item row="2" column="0" colspan="3">
+        <widget class="QTableWidget" name="tabla_mostrar_pasajeros">
+         <property name="enabled">
+          <bool>false</bool>
+         </property>
+         <property name="minimumSize">
+          <size>
+           <width>1149</width>
+           <height>370</height>
+          </size>
+         </property>
+         <property name="maximumSize">
+          <size>
+           <width>1149</width>
+           <height>16777215</height>
+          </size>
+         </property>
+         <property name="sizeAdjustPolicy">
+          <enum>QAbstractScrollArea::AdjustToContents</enum>
+         </property>
+         <property name="rowCount">
+          <number>1</number>
+         </property>
+         <attribute name="horizontalHeaderDefaultSectionSize">
+          <number>141</number>
+         </attribute>
+         <attribute name="horizontalHeaderHighlightSections">
+          <bool>true</bool>
+         </attribute>
+         <attribute name="horizontalHeaderMinimumSectionSize">
+          <number>141</number>
+         </attribute>
+         <attribute name="horizontalHeaderShowSortIndicator" stdset="0">
+          <bool>false</bool>
+         </attribute>
+         <attribute name="horizontalHeaderStretchLastSection">
+          <bool>false</bool>
+         </attribute>
+         <attribute name="verticalHeaderVisible">
+          <bool>true</bool>
+         </attribute>
+         <attribute name="verticalHeaderCascadingSectionResizes">
+          <bool>false</bool>
+         </attribute>
+         <row/>
+         <column>
+          <property name="text">
+           <string>DOCUMENTO</string>
+          </property>
+         </column>
+         <column>
+          <property name="text">
+           <string>NOMBRE</string>
+          </property>
+         </column>
+         <column>
+          <property name="text">
+           <string>LOCALIDAD</string>
+          </property>
+         </column>
+         <column>
+          <property name="text">
+           <string>PROVINCIA</string>
+          </property>
+         </column>
+         <column>
+          <property name="text">
+           <string>VEHICULO</string>
+          </property>
+         </column>
+         <column>
+          <property name="text">
+           <string>PATENTE</string>
+          </property>
+         </column>
+         <column>
+          <property name="text">
+           <string>EMAIL</string>
+          </property>
+         </column>
+         <column>
+          <property name="text">
+           <string>TELEFONO</string>
+          </property>
+         </column>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+ </widget>
+ <tabstops>
+  <tabstop>lineEdit_dni</tabstop>
+  <tabstop>lineEdit_nombre</tabstop>
+  <tabstop>lineEdit_localidad</tabstop>
+  <tabstop>lineEdit_provincia</tabstop>
+  <tabstop>lineEdit_patente</tabstop>
+  <tabstop>lineEdit_vehiculo</tabstop>
+  <tabstop>lineEdit_email</tabstop>
+  <tabstop>lineEdit_telefono</tabstop>
+  <tabstop>btn_cancelar</tabstop>
+  <tabstop>btn_siguiente</tabstop>
+  <tabstop>btn_finalizar</tabstop>
+  <tabstop>tabla_mostrar_pasajeros</tabstop>
+ </tabstops>
+ <resources/>
+ <connections/>
+</ui>
